@@ -44,7 +44,6 @@ class ProjectRepositoryTest(
             val projectSkill = ProjectSkill(project = project, skill = skill)
             project.skills.add(projectSkill)
         }
-        println("??????? : ${project.skills.size}")
         return project
     }
 

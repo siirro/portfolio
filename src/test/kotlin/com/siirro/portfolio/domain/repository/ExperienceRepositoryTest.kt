@@ -70,7 +70,7 @@ class ExperienceRepositoryTest(@Autowired val experienceRepository: ExperienceRe
     @Test
     fun testFindAllByIsActive() {
         println("---- findAllByIsActive 테스트 시작 ----")
-        val experiences = experienceRepository.findAllByIsActive(false)
+        val experiences = experienceRepository.findAllByIsActive(true)
         assertThat(experiences).hasSize(DATA_SIZE)
         println("experiences.size: ${experiences.size}")
 
@@ -79,5 +79,11 @@ class ExperienceRepositoryTest(@Autowired val experienceRepository: ExperienceRe
             println("experience.details.size: ${experience.details.size}")
         }
         println("---- findAll 테스트 종료 ----")
+    }
+
+    @Test
+    fun test() {
+        val findById = experienceRepository.findById(1)
+        println(findById.isPresent)
     }
 }

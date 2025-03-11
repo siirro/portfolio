@@ -35,7 +35,7 @@ class Experience(
     // mutableListOf() 쓰면 빈 리스트 만들어 줌
     @OneToMany(
         targetEntity = ExperienceDetail::class,
-        fetch = FetchType.LAZY,
+        fetch = FetchType.EAGER,
         cascade = [(CascadeType.ALL)]
     )
     @JoinColumn(name = "experience_id")
