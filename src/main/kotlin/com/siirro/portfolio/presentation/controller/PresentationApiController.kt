@@ -38,6 +38,8 @@ class PresentationApiController(
 
     @GetMapping("/v1/projects")
     fun getProjects(): List<ProjectDTO> {
-        return presentationService.getProjects()
+        val projectDTOs = presentationService.getProjects()
+        println("Returned Projects: $projectDTOs")
+        return projectDTOs
     }
 }

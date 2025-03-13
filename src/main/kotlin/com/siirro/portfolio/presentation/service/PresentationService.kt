@@ -39,7 +39,7 @@ class PresentationService(
     @Transactional(readOnly = true)
     fun getProjects(): List<ProjectDTO> {
         val projects = presentationRepository.getActiveProjects()
-
+        println("Projects retrieved: $projects") // 로그 추가
         return projects.map { ProjectDTO(it) }
     }
 }

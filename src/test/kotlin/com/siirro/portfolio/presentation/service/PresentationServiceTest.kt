@@ -2,6 +2,7 @@ package com.siirro.portfolio.presentation.service
 
 import com.siirro.portfolio.domain.entity.Introduction
 import com.siirro.portfolio.domain.entity.Link
+import com.siirro.portfolio.domain.entity.Project
 import com.siirro.portfolio.presentation.repository.PresentationRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
@@ -69,6 +70,35 @@ class PresentationServiceTest {
         assertThat(linkDTOs).hasSize(expetedSize)
         for (linkDTO in linkDTOs) {
             assertThat(linkDTO.content.toInt()).isOdd()
+        }
+    }
+
+    @Test
+    fun testGetProjects() {
+        // given
+        val projects = mutableListOf<Project>()
+        for (i in 1..DATA_SIZE) {
+            val project = Project(
+                name = "${i}",
+                description = "${i}",
+                startYear = i,
+                endYear = i,
+                startMonth = i,
+                endMonth = i,
+                isActive = i % 2 != 0
+            )
+            projects.add(project)
+        }
+        val activeProjects = projects.filter { project -> project.isActive }
+
+        Mockito.`when`(presentationRepository.getActiveProjects())
+            .thenReturn(activeProjects)
+        // when
+        val projectDTOs = presentationService.getProjects()
+        // then
+        assertThat(projectDTOs).hasSize(5)
+        for (projectDTO in projectDTOs) {
+            assertThat(projectDTO.name.toInt()).isOdd()
         }
     }
 }

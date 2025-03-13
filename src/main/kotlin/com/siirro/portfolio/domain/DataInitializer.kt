@@ -24,6 +24,7 @@ class DataInitializer(
     fun initializeData() {
         println("스프링이 실행되었습니다. 테스트 데이터를 초기화합니다.")
 
+
         val achievements = mutableListOf<Achievement>(
             Achievement(
                 title = "2025 Kakao 해커톤 최우수상",
@@ -100,7 +101,7 @@ class DataInitializer(
             startMonth = 5,
             endYear = 2025,
             endMonth = 7,
-            isActive = false
+            isActive = true
         )
         project1.addDetails(
             mutableListOf(
