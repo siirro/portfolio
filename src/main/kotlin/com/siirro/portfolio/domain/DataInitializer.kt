@@ -106,7 +106,7 @@ class DataInitializer(
         )
         project1.addDetails(
             mutableListOf(
-                ProjectDetail(content = "설명1", url = null, isActive = false),
+                ProjectDetail(content = "설명1", url = null, isActive = true),
                 ProjectDetail(content = "설명12", url = null, isActive = false)
             )
         )
@@ -125,13 +125,13 @@ class DataInitializer(
             startMonth = 10,
             endYear = 2025,
             endMonth = 12,
-            isActive = false
+            isActive = true
         )
         project2.addDetails(
             mutableListOf(
                 ProjectDetail(content = "설명1", url = null, isActive = false),
-                ProjectDetail(content = "설명2", url = null, isActive = false),
-                ProjectDetail(content = "설명3", url = "https://github.com", isActive = false)
+                ProjectDetail(content = "설명2", url = null, isActive = true),
+                ProjectDetail(content = "설명3", url = "https://github.com", isActive = true)
             )
         )
         project2.skills.addAll(
