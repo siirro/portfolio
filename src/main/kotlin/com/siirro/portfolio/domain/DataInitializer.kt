@@ -89,10 +89,11 @@ class DataInitializer(
         experienceRepository.saveAll(mutableListOf(experience1, experience2))
 
         val java = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
-        val kotlin = Skill(name = "Java", type = SkillType.LANGUAGE.name, isActive = true)
-        val spring = Skill(name = "Java", type = SkillType.FRAMEWORK.name, isActive = true)
-        val mysql = Skill(name = "Java", type = SkillType.DATABASE.name, isActive = true)
-        skillRepository.saveAll(mutableListOf(java, kotlin, spring, mysql))
+        val kotlin = Skill(name = "kotlin", type = SkillType.LANGUAGE.name, isActive = true)
+        val spring = Skill(name = "spring", type = SkillType.FRAMEWORK.name, isActive = true)
+        val mysql = Skill(name = "mysql", type = SkillType.DATABASE.name, isActive = true)
+        val kafka = Skill(name = "kafka", type = SkillType.TOOL.name, isActive = true)
+        skillRepository.saveAll(mutableListOf(java, kotlin, spring, mysql, kafka))
 
         val project1 = Project(
             name = "프로젝트1",
