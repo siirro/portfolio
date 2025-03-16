@@ -3,7 +3,9 @@ package com.siirro.portfolio.domain.entity
 import jakarta.persistence.*
 
 @Entity
-class ExperienceDetail(content: String, isActive: Boolean) : BaseEntity() {
+class ExperienceDetail(
+    content: String, isActive: Boolean
+) : BaseEntity() {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

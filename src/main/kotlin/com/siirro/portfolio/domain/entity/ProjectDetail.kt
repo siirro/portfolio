@@ -14,7 +14,7 @@ class ProjectDetail(content: String, url: String?, isActive: Boolean) : BaseEnti
 
     var url: String? = url
 
-    var isActive = isActive
+    var isActive: Boolean = isActive
 
     fun update(content: String, url: String?, isActive: Boolean) {
         this.content = content
