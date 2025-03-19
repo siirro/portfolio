@@ -14,19 +14,19 @@ class AdminProjectApiController(
     private val adminProjectService: AdminProjectService
 ) {
     @PostMapping
-    fun postExperience(@RequestBody @Validated form: ProjectForm): ResponseEntity<Any> {
+    fun postProject(@RequestBody @Validated form: ProjectForm): ResponseEntity<Any> {
         adminProjectService.save(form)
         return ApiResponse.successCreate()
     }
 
     @PutMapping("/{id}")
-    fun putExperience(@PathVariable id: Long, @RequestBody @Validated form: ProjectForm): ResponseEntity<Any> {
+    fun putProject(@PathVariable id: Long, @RequestBody @Validated form: ProjectForm): ResponseEntity<Any> {
         adminProjectService.update(id, form)
         return ApiResponse.successUpdate()
     }
 
     @GetMapping("/{id}/details")
-    fun getExperienceDetails(@PathVariable id: Long): TableDTO {
+    fun getProjectDetails(@PathVariable id: Long): TableDTO {
         return adminProjectService.getProjectDetailTable(id)
     }
 }
